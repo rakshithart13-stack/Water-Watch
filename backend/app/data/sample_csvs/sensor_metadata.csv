@@ -1,0 +1,36 @@
+external_sensor_id,name,measurement_type,unit,zone_code,min_operational,max_operational,lat,lng
+SEN-ZONE-C1-PRES,Central District Pressure Sensor,pressure,psi,ZONE-C1,40.0,70.0,12.9626,77.5856
+SEN-ZONE-C1-FLOW,Central District Flow Rate Sensor,flow_rate,m3/h,ZONE-C1,10.0,45.0,12.9656,77.5886
+SEN-ZONE-C1-TANK,Central District Tank Level Sensor,tank_level,%,ZONE-C1,45.0,90.0,12.9686,77.5916
+SEN-ZONE-C1-TURB,Central District Turbidity Sensor,turbidity,NTU,ZONE-C1,0.1,1.0,12.9716,77.5946
+SEN-ZONE-C1-PH,Central District Ph Sensor,ph,pH,ZONE-C1,6.8,8.2,12.9746,77.5976
+SEN-ZONE-C1-COND,Central District Conductivity Sensor,conductivity,uS/cm,ZONE-C1,180.0,450.0,12.9776,77.6006
+SEN-ZONE-C1-TEMP,Central District Temperature Sensor,temperature,C,ZONE-C1,14.0,22.0,12.9806,77.6036
+SEN-ZONE-N2-PRES,North Metro Pressure Sensor,pressure,psi,ZONE-N2,40.0,70.0,13.0268,77.588
+SEN-ZONE-N2-FLOW,North Metro Flow Rate Sensor,flow_rate,m3/h,ZONE-N2,10.0,45.0,13.0298,77.591
+SEN-ZONE-N2-TANK,North Metro Tank Level Sensor,tank_level,%,ZONE-N2,45.0,90.0,13.0328,77.594
+SEN-ZONE-N2-TURB,North Metro Turbidity Sensor,turbidity,NTU,ZONE-N2,0.1,1.0,13.0358,77.597
+SEN-ZONE-N2-PH,North Metro Ph Sensor,ph,pH,ZONE-N2,6.8,8.2,13.0388,77.6
+SEN-ZONE-N2-COND,North Metro Conductivity Sensor,conductivity,uS/cm,ZONE-N2,180.0,450.0,13.0418,77.603
+SEN-ZONE-N2-TEMP,North Metro Temperature Sensor,temperature,C,ZONE-N2,14.0,22.0,13.0448,77.606
+SEN-ZONE-E3-PRES,East Valley Pressure Sensor,pressure,psi,ZONE-E3,40.0,70.0,12.9694,77.6318
+SEN-ZONE-E3-FLOW,East Valley Flow Rate Sensor,flow_rate,m3/h,ZONE-E3,10.0,45.0,12.9724,77.6348
+SEN-ZONE-E3-TANK,East Valley Tank Level Sensor,tank_level,%,ZONE-E3,45.0,90.0,12.9754,77.6378
+SEN-ZONE-E3-TURB,East Valley Turbidity Sensor,turbidity,NTU,ZONE-E3,0.1,1.0,12.9784,77.6408
+SEN-ZONE-E3-PH,East Valley Ph Sensor,ph,pH,ZONE-E3,6.8,8.2,12.9814,77.6438
+SEN-ZONE-E3-COND,East Valley Conductivity Sensor,conductivity,uS/cm,ZONE-E3,180.0,450.0,12.9844,77.6468
+SEN-ZONE-E3-TEMP,East Valley Temperature Sensor,temperature,C,ZONE-E3,14.0,22.0,12.987400000000001,77.6498
+SEN-ZONE-W4-PRES,West Hills Pressure Sensor,pressure,psi,ZONE-W4,40.0,70.0,12.9511,77.5295
+SEN-ZONE-W4-FLOW,West Hills Flow Rate Sensor,flow_rate,m3/h,ZONE-W4,10.0,45.0,12.9541,77.5325
+SEN-ZONE-W4-TANK,West Hills Tank Level Sensor,tank_level,%,ZONE-W4,45.0,90.0,12.9571,77.5355
+SEN-ZONE-W4-TURB,West Hills Turbidity Sensor,turbidity,NTU,ZONE-W4,0.1,1.0,12.9601,77.5385
+SEN-ZONE-W4-PH,West Hills Ph Sensor,ph,pH,ZONE-W4,6.8,8.2,12.9631,77.5415
+SEN-ZONE-W4-COND,West Hills Conductivity Sensor,conductivity,uS/cm,ZONE-W4,180.0,450.0,12.9661,77.5445
+SEN-ZONE-W4-TEMP,West Hills Temperature Sensor,temperature,C,ZONE-W4,14.0,22.0,12.969100000000001,77.5475
+SEN-ZONE-S5-PRES,South Industrial Pressure Sensor,pressure,psi,ZONE-S5,40.0,70.0,12.9051,77.6019
+SEN-ZONE-S5-FLOW,South Industrial Flow Rate Sensor,flow_rate,m3/h,ZONE-S5,10.0,45.0,12.9081,77.6049
+SEN-ZONE-S5-TANK,South Industrial Tank Level Sensor,tank_level,%,ZONE-S5,45.0,90.0,12.9111,77.6079
+SEN-ZONE-S5-TURB,South Industrial Turbidity Sensor,turbidity,NTU,ZONE-S5,0.1,1.0,12.9141,77.6109
+SEN-ZONE-S5-PH,South Industrial Ph Sensor,ph,pH,ZONE-S5,6.8,8.2,12.9171,77.6139
+SEN-ZONE-S5-COND,South Industrial Conductivity Sensor,conductivity,uS/cm,ZONE-S5,180.0,450.0,12.9201,77.6169
+SEN-ZONE-S5-TEMP,South Industrial Temperature Sensor,temperature,C,ZONE-S5,14.0,22.0,12.9231,77.6199
