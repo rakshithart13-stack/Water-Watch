@@ -10,7 +10,11 @@ import {
   AuditLogItem
 } from '../types';
 
-const API_BASE = '/api';
+// In production (Vercel), VITE_API_URL points to the Render backend.
+// In local dev, the Vite proxy rewrites /api → http://127.0.0.1:8000
+const API_BASE = import.meta.env.VITE_API_URL
+  ? `${import.meta.env.VITE_API_URL}/api`
+  : '/api';
 
 async function fetchJson<T>(url: string, options?: RequestInit): Promise<T> {
   const res = await fetch(`${API_BASE}${url}`, {
