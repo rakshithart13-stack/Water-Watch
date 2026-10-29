@@ -4,9 +4,16 @@ from pydantic_settings import BaseSettings
 class Settings(BaseSettings):
     APP_NAME: str = "Water Watch AI"
     APP_ENV: str = os.getenv("APP_ENV", "development")
+
+    # Supabase PostgreSQL connection string (Transaction Pooler recommended for Render)
+    # Format: postgresql://postgres.[project-ref]:[password]@aws-0-[region].pooler.supabase.com:5432/postgres
     DATABASE_URL: str = os.getenv("DATABASE_URL", "sqlite:///./water_watch.db")
+
+    # Supabase project credentials
     SUPABASE_URL: str = os.getenv("SUPABASE_URL", "")
-    SUPABASE_KEY: str = os.getenv("SUPABASE_KEY", "")
+    SUPABASE_KEY: str = os.getenv("SUPABASE_KEY", "")  # use service_role key for backend
+    SUPABASE_SERVICE_ROLE_KEY: str = os.getenv("SUPABASE_SERVICE_ROLE_KEY", "")
+
     IS_DEMO_MODE: bool = True
     CORS_ORIGINS: list[str] = [
         "http://localhost:5173",
@@ -14,7 +21,7 @@ class Settings(BaseSettings):
         "http://localhost:3000",
         "*"
     ]
-    
+
     # Priority Model Default Weights
     WEIGHT_SEVERITY: float = 0.35
     WEIGHT_ANOMALY: float = 0.25

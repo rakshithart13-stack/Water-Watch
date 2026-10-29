@@ -182,13 +182,24 @@ CREATE TABLE IF NOT EXISTS threshold_configs (
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
 );
 
--- Performance Indexes
+-- Performance Indexes (fast dashboard + incident queries)
 CREATE INDEX IF NOT EXISTS idx_sensor_readings_sensor_time ON sensor_readings(sensor_id, observed_at DESC);
+CREATE INDEX IF NOT EXISTS idx_sensor_readings_observed_at ON sensor_readings(observed_at DESC);
 CREATE INDEX IF NOT EXISTS idx_incidents_status ON incidents(status);
 CREATE INDEX IF NOT EXISTS idx_incidents_zone ON incidents(zone_id);
 CREATE INDEX IF NOT EXISTS idx_incidents_priority ON incidents(priority_score DESC);
+CREATE INDEX IF NOT EXISTS idx_incidents_updated_at ON incidents(updated_at DESC);
+CREATE INDEX IF NOT EXISTS idx_incidents_status_priority ON incidents(status, priority_score DESC);
 CREATE INDEX IF NOT EXISTS idx_complaints_zone_time ON complaints(zone_id, created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_complaints_status ON complaints(verification_status);
 CREATE INDEX IF NOT EXISTS idx_notifications_recipient_read ON notifications(recipient_id, is_read);
+CREATE INDEX IF NOT EXISTS idx_notifications_created_at ON notifications(created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_audit_logs_created_at ON audit_logs(created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_samples_zone_time ON samples(zone_id, collected_at DESC);
+
+-- Realtime: enable publication on high-traffic tables
+-- (Run once in Supabase Dashboard SQL Editor if using Realtime subscriptions)
+-- ALTER PUBLICATION supabase_realtime ADD TABLE incidents, notifications, sensor_readings;
 
 -- Row Level Security (RLS)
 ALTER TABLE profiles ENABLE ROW LEVEL SECURITY;

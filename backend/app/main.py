@@ -3,7 +3,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.config import settings
-from app.database import engine, Base, SessionLocal
+from app.database import engine, Base, SessionLocal, check_db_connection
 from app.data.demo_dataset import seed_demo_data
 
 from app.routers import (
@@ -49,12 +49,15 @@ app.add_middleware(
 
 @app.get("/api/health", tags=["system"])
 def health_check():
+    db_ok = check_db_connection()
+    db_type = "postgresql (supabase)" if settings.DATABASE_URL.startswith("postgresql") else "sqlite (local)"
     return {
-        "status": "healthy",
+        "status": "healthy" if db_ok else "degraded",
         "service": "Water Watch AI Backend",
         "version": "1.0.0",
         "timestamp": datetime.utcnow().isoformat(),
-        "database": "connected",
+        "database": db_type,
+        "database_connected": db_ok,
         "is_demo_mode": settings.IS_DEMO_MODE,
         "disclaimer": "Sample prototype data only. Not a certified public health or municipal compliance system."
     }
