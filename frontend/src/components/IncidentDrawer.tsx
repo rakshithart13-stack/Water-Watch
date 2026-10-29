@@ -106,10 +106,10 @@ export const IncidentDrawer: React.FC<IncidentDrawerProps> = ({ incidentId, onCl
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-hidden bg-black/60 backdrop-blur-sm flex justify-end">
-      <div className="w-full max-w-2xl bg-surface border-l border-surfaceBorder h-full flex flex-col shadow-2xl overflow-hidden animate-in slide-in-from-right duration-200">
+    <div className="fixed inset-0 z-[150] overflow-hidden bg-black/75 backdrop-blur-sm flex justify-end">
+      <div className="w-full max-w-2xl bg-surface/98 backdrop-blur-2xl border-l border-surfaceBorder h-full flex flex-col shadow-2xl shadow-black overflow-hidden animate-in slide-in-from-right duration-200">
         {/* Header */}
-        <div className="p-4 border-b border-surfaceBorder bg-darkBg/60 flex items-start justify-between">
+        <div className="p-4 sm:p-5 border-b border-surfaceBorder bg-darkBg/80 backdrop-blur-md flex items-start justify-between">
           <div>
             <div className="flex items-center gap-2 mb-1.5">
               <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">

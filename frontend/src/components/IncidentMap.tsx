@@ -50,7 +50,7 @@ export const IncidentMap: React.FC<IncidentMapProps> = ({
   const centerLng = 77.5946;
 
   return (
-    <div className="relative w-full h-[420px] rounded-xl overflow-hidden border border-surfaceBorder shadow-xl bg-surface">
+    <div className="map-isolation-wrapper relative z-10 w-full h-[440px] rounded-2xl overflow-hidden border border-surfaceBorder/80 shadow-2xl bg-surface">
       <MapContainer
         center={[centerLat, centerLng]}
         zoom={12}
@@ -154,13 +154,13 @@ export const IncidentMap: React.FC<IncidentMapProps> = ({
       </MapContainer>
 
       {/* Map Legend */}
-      <div className="absolute bottom-3 left-3 bg-darkBg/80 backdrop-blur-md border border-surfaceBorder rounded-lg px-3 py-2 text-[11px] text-slate-300 z-[1000] flex items-center gap-4">
+      <div className="absolute bottom-3 left-3 bg-darkBg/90 backdrop-blur-md border border-surfaceBorder/80 rounded-xl px-3.5 py-2 text-[11px] text-slate-300 z-20 flex flex-wrap items-center gap-4 shadow-xl">
         <div className="flex items-center gap-1.5">
-          <span className="w-2.5 h-2.5 rounded-full bg-crit"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-crit shadow-sm shadow-crit/50"></span>
           <span>Critical Alert (&ge;75)</span>
         </div>
         <div className="flex items-center gap-1.5">
-          <span className="w-2.5 h-2.5 rounded-full bg-warn"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-warn shadow-sm shadow-warn/50"></span>
           <span>High Priority (50-74)</span>
         </div>
         <div className="flex items-center gap-1.5">

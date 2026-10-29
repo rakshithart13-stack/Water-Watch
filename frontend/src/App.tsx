@@ -44,7 +44,7 @@ export function App() {
       />
 
       {/* Active Page View */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+      <main className={`flex-1 w-full ${currentPage === 'landing' ? '' : 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6'}`}>
         {currentPage === 'landing' && <LandingPage onEnterApp={handleNavigate} />}
         {currentPage === 'dashboard' && (
           <DashboardPage

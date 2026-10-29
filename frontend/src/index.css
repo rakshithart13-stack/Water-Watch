@@ -2,36 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── CSS Custom Properties ─────────────────────────────── */
+:root {
+  --color-dark-bg: #080D18;
+  --color-surface: #0D1524;
+  --color-surface-card: #111C2D;
+  --color-surface-border: #1a2744;
+  --color-aqua: #21D4E8;
+  --color-electric: #65BFFF;
+  --color-warn: #F5A623;
+  --color-crit: #EF4444;
+  --color-succ: #22C55E;
+}
+
 @layer base {
   body {
-    background-color: #08111F;
+    background-color: #080D18;
     color: #F1F5F9;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 }
 
-/* Custom Scrollbars */
+/* ── Custom Scrollbars ──────────────────────────────────── */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0B1626;
+  background: #080D18;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1E314B;
+  background: #1a2744;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #2D486B;
+  background: #253460;
 }
 
-/* Dark mode Leaflet adjustments */
+/* ── Leaflet Dark Mode Adjustments ──────────────────────── */
 .leaflet-container {
   width: 100%;
   height: 100%;
   border-radius: 0.75rem;
   background-color: #0d1b2e !important;
+  /* Contain Leaflet's internal z-index stacking context */
+  isolation: isolate;
 }
 
 .dark-tiles {
@@ -39,13 +54,76 @@
 }
 
 .leaflet-popup-content-wrapper {
-  background-color: #111E30 !important;
+  background-color: #111C2D !important;
   color: #F1F5F9 !important;
-  border: 1px solid #20334E !important;
+  border: 1px solid #1a2744 !important;
   border-radius: 8px !important;
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
 }
 
 .leaflet-popup-tip {
-  background-color: #111E30 !important;
+  background-color: #111C2D !important;
+}
+
+/* ── Map Isolation Wrapper ──────────────────────────────── */
+/* Contains Leaflet z-index so it never bleeds into the global stacking context */
+.map-isolation-wrapper {
+  isolation: isolate;
+  position: relative;
+}
+
+/* ── Glass Card Utility ─────────────────────────────────── */
+.glass-card {
+  background: rgba(17, 28, 45, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(101, 191, 255, 0.12);
+}
+
+/* ── Nav Blur Utility ───────────────────────────────────── */
+.nav-blur {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background-color: rgba(8, 13, 24, 0.95);
+}
+
+/* ── Wave Flow Animation ────────────────────────────────── */
+@keyframes waveFlow {
+  0% {
+    transform: translateX(-50%) scaleY(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateX(-20%) scaleY(1.15);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(-50%) scaleY(1);
+    opacity: 0.4;
+  }
+}
+
+.wave-flow {
+  animation: waveFlow 8s ease-in-out infinite;
+}
+
+/* ── Pulsing dot animation ──────────────────────────────── */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* ── Reduced Motion ─────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .wave-flow,
+  .pulse-dot,
+  .animate-pulse,
+  .animate-ping,
+  .animate-spin {
+    animation: none !important;
+  }
 }

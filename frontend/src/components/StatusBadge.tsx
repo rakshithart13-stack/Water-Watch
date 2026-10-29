@@ -35,7 +35,7 @@ export const StatusBadge: React.FC<StatusBadgeProps> = ({ status }) => {
   }
 
   return (
-    <span className={`px-2.5 py-0.5 rounded-full text-xs font-mono font-medium border ${style}`}>
+    <span className={`px-2.5 py-0.5 rounded-md text-[11px] font-mono font-medium border ${style} uppercase tracking-wider`}>
       {status.replace('_', ' ')}
     </span>
   );
